@@ -8,9 +8,27 @@ import LoadingScreen from '@/components/LoadingScreen';
 import SubTopicCarousel from '@/components/SubTopicCarousel';
 import Gallery from '@/components/Gallery';
 import { siteContent as c } from '@/content/siteContent';
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaInstagram,
+  FaXTwitter,
+  FaTiktok,
+  FaWhatsapp,
+} from 'react-icons/fa6';
+
 
 export default function HomePage() {
   const aboutImage = c.whoWeAre.image;
+  
+  const socialIcons = {
+    Facebook: FaFacebookF,
+    LinkedIn: FaLinkedinIn,
+    Instagram: FaInstagram,
+    X: FaXTwitter,
+    TikTok: FaTiktok,
+    WhatsApp: FaWhatsapp,
+  };
 
   return (
     <>
@@ -143,6 +161,160 @@ export default function HomePage() {
                 <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-pbi-100 text-2xl">🤝</span>
                 <h2 className="mb-4 font-serif text-2xl font-bold text-pbi-800 sm:text-3xl">{c.partnership.title}</h2>
                 <p className="whitespace-pre-line text-base leading-relaxed text-gray-600">{c.partnership.body}</p>
+              </div>
+            </FadeInSection>
+          </div>
+        </section>
+
+        
+        {/* Contact Us */}
+        <section
+          id="contact"
+          className="scroll-mt-16 border-t border-pbi-100 bg-pbi-50"
+        >
+          <div className="mx-auto max-w-6xl px-6 py-16">
+            <FadeInSection className="mb-10 text-center">
+              <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-pbi-100 text-2xl">
+                ✉️
+              </span>
+
+              <h2 className="mb-4 font-serif text-3xl font-bold text-pbi-800">
+                {c.contact.title}
+              </h2>
+
+              <p className="mx-auto max-w-2xl text-base leading-relaxed text-gray-600">
+                {c.contact.intro}
+              </p>
+            </FadeInSection>
+
+            <div className="grid gap-6 md:grid-cols-3">
+              {/* Business Email */}
+              <FadeInSection>
+                <div className="h-full rounded-2xl border border-pbi-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-pbi-100 text-2xl">
+                    ✉️
+                  </div>
+
+                  <h3 className="mb-2 text-lg font-bold text-pbi-800">
+                    Business Email
+                  </h3>
+
+                  <p className="mb-4 text-sm leading-relaxed text-gray-500">
+                    Send us an inquiry or discuss a potential partnership.
+                  </p>
+
+                  <a
+                    href={`mailto:${c.contact.email}`}
+                    className="break-words font-semibold text-pbi-700 transition-colors hover:text-pbi-900 hover:underline"
+                  >
+                    {c.contact.email}
+                  </a>
+                </div>
+              </FadeInSection>
+
+              {/* Phone Numbers */}
+              <FadeInSection delayMs={100}>
+                <div className="h-full rounded-2xl border border-pbi-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-pbi-100 text-2xl">
+                    📞
+                  </div>
+
+                  <h3 className="mb-2 text-lg font-bold text-pbi-800">
+                    Call Us
+                  </h3>
+
+                  <p className="mb-4 text-sm leading-relaxed text-gray-500">
+                    Reach our team for inquiries and collaboration.
+                  </p>
+
+                  <div className="space-y-4">
+                    {c.contact.phones.map((phone) => (
+                      <div key={phone.label}>
+                        <p className="mb-1 text-xs font-medium uppercase tracking-wider text-gray-400">
+                          {phone.label}
+                        </p>
+
+                        <a
+                          href={`tel:${phone.number.replace(/[^\d+]/g, '')}`}
+                          className="font-semibold text-pbi-700 transition-colors hover:text-pbi-900 hover:underline"
+                        >
+                          {phone.number}
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </FadeInSection>
+
+              {/* Social Media */}
+              <FadeInSection delayMs={200}>
+                <div className="h-full rounded-2xl border border-pbi-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-pbi-100 text-2xl">
+                    🌐
+                  </div>
+
+                  <h3 className="mb-2 text-lg font-bold text-pbi-800">
+                    Connect With Us
+                  </h3>
+
+                  <p className="mb-5 text-sm leading-relaxed text-gray-500">
+                    Follow our work, updates, and community initiatives.
+                  </p>
+
+                  
+<div className="flex flex-wrap gap-3">
+  {c.contact.socialMedia.map((social) => {
+    const SocialIcon =
+      socialIcons[social.name as keyof typeof socialIcons];
+
+    if (!SocialIcon) return null;
+
+    return (
+      <a
+        key={social.name}
+        href={social.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Visit our ${social.name} page`}
+        title={social.name}
+        className="flex h-11 w-11 items-center justify-center rounded-xl border border-pbi-100 bg-pbi-50 text-lg text-pbi-800 transition-all duration-200 hover:-translate-y-1 hover:bg-pbi-800 hover:text-white"
+      >
+        <SocialIcon aria-hidden="true" />
+      </a>
+    );
+  })}
+</div>
+
+                  <p className="mt-4 text-xs text-gray-400">
+                    Follow Pro Bono Initiative online.
+                  </p>
+                </div>
+              </FadeInSection>
+            </div>
+
+            {/* Partnership invitation */}
+            <FadeInSection delayMs={150}>
+              <div className="mt-8 rounded-2xl bg-pbi-900 px-6 py-8 text-center text-white sm:px-10">
+                <h3 className="mb-3 font-serif text-xl font-bold sm:text-2xl">
+                  Let&apos;s Work Together
+                </h3>
+
+                <p className="mx-auto mb-6 max-w-2xl leading-relaxed text-pbi-100">
+                  Join us in advancing access to justice, promoting human
+                  rights, and protecting vulnerable communities.
+                </p>
+
+                <a
+                  href={`mailto:${c.contact.email}?subject=${encodeURIComponent(
+                    'Partnership Inquiry - Pro Bono Initiative'
+                  )}`}
+                  className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-pbi-800 transition-all hover:-translate-y-0.5 hover:bg-pbi-100"
+                >
+                  Contact Us
+                  <span className="ml-2" aria-hidden="true">
+                    →
+                  </span>
+                </a>
               </div>
             </FadeInSection>
           </div>

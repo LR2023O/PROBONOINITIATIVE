@@ -1,11 +1,99 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth scrolling across the website */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
   color: #1c2b22;
+  overflow-x: hidden;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Section entrance animation */
+@keyframes section-enter {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle fade and lift for content */
+@keyframes content-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply to elements when your animation classes are used */
+.section-enter {
+  animation: section-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.content-reveal {
+  animation: content-reveal 0.65s ease-out both;
+}
+
+/* Smooth hover effects for interactive cards */
+.contact-card,
+.pbi-card {
+  transition:
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 350ms ease,
+    border-color 350ms ease;
+}
+
+.contact-card:hover,
+.pbi-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Scroll-to-top button animation */
+.back-to-top {
+  transition:
+    opacity 250ms ease,
+    transform 300ms ease,
+    background-color 250ms ease;
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+}
+
+/* Accessible motion settings */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -48,8 +48,9 @@ export const siteContent = {
     { label: 'Who We Are', href: '#who-we-are' },
     { label: 'Vision & Mission', href: '#vision' },
     { label: 'Our Work', href: '#context' },
-    { label: 'Gallery', href: '#gallery' },
+    /* { label: 'Gallery', href: '#gallery' }, */
     { label: 'Partnership', href: '#partnership' },
+    { label: 'Contact', href: '#contact' },
   ],
 
   hero: {
@@ -137,5 +138,52 @@ export const siteContent = {
   partnership: {
     title: 'Our Partnership Statement',
     body: 'Partnership with the National Ministry of Justice as well as State Authorities will attempt to bridge these gaps through pro bono legal aid, survivor representation, paralegal support and advocacy. The organization will strive to empower survivors to pursue constitutional and statutory rights and challenge discriminatory customary outcomes through legal caucusing. PBI will also assist survivors to pursue formal remedies when viable, and engage traditional leaders and other actors to align practices with human rights standards. Ultimately, PBI will join hands with other humanitarian players to foster equitable justice, reduce impunity, and drive normative change in rural South Sudan, where women and girls disproportionately suffer from legal pluralism and weak rule of law.',
+  },
+
+  
+  contact: {
+    title: 'Get in Touch',
+    intro:
+      'We welcome inquiries, collaboration opportunities, and partnerships that advance access to justice and protect the rights of vulnerable communities.',
+
+    email: 'info@probonoinitiative.org',
+
+    phones: [
+      {
+        label: 'Main Office',
+        number: '+211 XXX XXX XXX',
+      },
+      {
+        label: 'Alternative Contact',
+        number: '+254 XXX XXX XXX',
+      },
+    ],
+
+socialMedia: [
+  {
+    name: 'Facebook',
+    url: 'https://www.facebook.com/YOUR_PAGE',
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/company/YOUR_PAGE',
+  },
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/YOUR_PAGE',
+  },
+  {
+    name: 'X',
+    url: 'https://x.com/YOUR_PAGE',
+  },
+  {
+    name: 'TikTok',
+    url: 'https://www.tiktok.com/@YOUR_USERNAME',
+  },
+  {
+    name: 'WhatsApp',
+    url: 'https://wa.me/211XXXXXXXXX',
+  },
+],
   },
 };
