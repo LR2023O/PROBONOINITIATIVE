@@ -8,7 +8,10 @@ export default function Footer({ name, note }: { name: string; note: string }) {
             &copy; {new Date().getFullYear()} {name}. All rights reserved.
           </p>
         </div>
-        <p className="mt-4 max-w-3xl text-xs leading-relaxed text-pbi-100/60">{note}</p>
+        <p className="mt-4 max-w-3xl text-xs leading-relaxed text-pbi-100/60">{note} <br />
+        Made by <a href="https://lr2023o.github.io/Portfolio/" className="text-green-400 hover:text-pbi-100/100" target="_blank" rel="noopener noreferrer">
+              LarryR
+            </a> </p>
       </div>
     </footer>
   );

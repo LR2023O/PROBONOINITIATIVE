@@ -66,7 +66,7 @@ export default function SubTopicCarousel({ items }: { items: MiniCard[] }) {
                     }
                   `}
                 >
-                  📌
+                  <span>{'\u{1F4CC}'}</span>
                 </div>
 
                 <div className="min-w-0 flex-1">

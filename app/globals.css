@@ -6,7 +6,7 @@
 /* Smooth scrolling across the website */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 6px;
 }
 
 body {
