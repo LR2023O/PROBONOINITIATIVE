@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a8049"/>
+      <stop offset="1" stop-color="#1a4d2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g)"/>
+  <circle cx="180" cy="130" r="240" fill="#8cc9a2" opacity="0.2"/>
+  <circle cx="1040" cy="720" r="260" fill="#3a9a5c" opacity="0.25"/>
+  <g fill="none" stroke="#e6f2ea" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.85" transform="translate(540 290)">
+    <rect x="0" y="30" width="120" height="80" rx="14"/>
+    <circle cx="60" cy="70" r="22"/>
+    <path d="M35 30l10-16h30l10 16"/>
+  </g>
+  <text x="600" y="470" text-anchor="middle" font-family="Georgia, serif" font-size="32" fill="#e6f2ea" opacity="0.9">Your photo here</text>
+  <text x="600" y="512" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#e6f2ea" opacity="0.6">public/images/gallery-2.jpg</text>
+</svg>
